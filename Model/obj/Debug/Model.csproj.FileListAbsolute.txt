@@ -1,0 +1,20 @@
+C:\Users\Albert\source\repos\Библиотека\Library\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Albert\source\repos\Библиотека\Library\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\Model.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\Model.pdb
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.Helpers.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.Mvc.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.Razor.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.WebPages.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.Helpers.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.Mvc.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.Razor.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.WebPages.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\obj\Debug\Model.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Model\obj\Debug\Model.pdb

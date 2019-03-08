@@ -1,0 +1,22 @@
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\Data.dll.config
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\Data.dll
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\Data.pdb
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\EntityFramework.dll
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\EntityFramework.xml
+C:\Users\Albert\source\repos\Библиотека\Library\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Albert\source\repos\Библиотека\Library\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Albert\source\repos\Библиотека\Library\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Albert\source\repos\Библиотека\Library\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Albert\source\repos\Библиотека\Library\Data\obj\Debug\Data.dll
+C:\Users\Albert\source\repos\Библиотека\Library\Data\obj\Debug\Data.pdb
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\Data.dll.config
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\Data.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\Data.pdb
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\EntityFramework.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\EntityFramework.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\obj\Debug\Data.dll
+C:\Users\Top_Pechka\Source\repos\New folder\Библиотека\Library\Data\obj\Debug\Data.pdb

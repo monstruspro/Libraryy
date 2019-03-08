@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="author">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="authors_books" Relationship="Self.author_book_author" FromRole="authors" ToRole="authors_books" />
+  </EntityType>
+  <EntityType Name="authors_books">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="book_id" Type="Int32" Nullable="false" />
+    <Property Name="author_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="author" Relationship="Self.author_book_author" FromRole="authors_books" ToRole="authors" />
+    <NavigationProperty Name="book" Relationship="Self.author_book_book" FromRole="authors_books" ToRole="books" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pub_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="authors_books" Relationship="Self.author_book_book" FromRole="books" ToRole="authors_books" />
+    <NavigationProperty Name="books_history" Relationship="Self.books_history_books" FromRole="books" ToRole="books_history" />
+  </EntityType>
+  <EntityType Name="books_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="taking_day" Type="DateTime" Precision="0" />
+    <Property Name="return_day" Type="DateTime" Precision="0" />
+    <Property Name="true_return_day" Type="DateTime" Precision="0" />
+    <Property Name="book_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="book" Relationship="Self.books_history_books" FromRole="books_history" ToRole="books" />
+    <NavigationProperty Name="user" Relationship="Self.FK_books_history_clients" FromRole="books_history" ToRole="users" />
+  </EntityType>
+  <EntityType Name="privilege">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="privilege1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="users_privileges" Relationship="Self.FK_users_privileges_privileges" FromRole="privileges" ToRole="users_privileges" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="books_history" Relationship="Self.FK_books_history_clients" FromRole="users" ToRole="books_history" />
+    <NavigationProperty Name="users_privileges" Relationship="Self.FK_users_privileges_users" FromRole="users" ToRole="users_privileges" />
+  </EntityType>
+  <EntityType Name="users_privileges">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="privileges_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="privilege" Relationship="Self.FK_users_privileges_privileges" FromRole="users_privileges" ToRole="privileges" />
+    <NavigationProperty Name="user" Relationship="Self.FK_users_privileges_users" FromRole="users_privileges" ToRole="users" />
+  </EntityType>
+  <Association Name="author_book_author">
+    <End Role="authors" Type="Self.author" Multiplicity="1" />
+    <End Role="authors_books" Type="Self.authors_books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="authors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="authors_books">
+        <PropertyRef Name="author_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="author_book_book">
+    <End Role="books" Type="Self.book" Multiplicity="1" />
+    <End Role="authors_books" Type="Self.authors_books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="authors_books">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="books_history_books">
+    <End Role="books" Type="Self.book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="books_history" Type="Self.books_history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="books_history">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_books_history_clients">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="books_history" Type="Self.books_history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="books_history">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_privileges_privileges">
+    <End Role="privileges" Type="Self.privilege" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="users_privileges" Type="Self.users_privileges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="privileges">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users_privileges">
+        <PropertyRef Name="privileges_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_privileges_users">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="users_privileges" Type="Self.users_privileges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users_privileges">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="authors" EntityType="Self.author" />
+    <EntitySet Name="authors_books" EntityType="Self.authors_books" />
+    <EntitySet Name="books" EntityType="Self.book" />
+    <EntitySet Name="books_history" EntityType="Self.books_history" />
+    <EntitySet Name="privileges" EntityType="Self.privilege" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="users_privileges" EntityType="Self.users_privileges" />
+    <AssociationSet Name="author_book_author" Association="Self.author_book_author">
+      <End Role="authors" EntitySet="authors" />
+      <End Role="authors_books" EntitySet="authors_books" />
+    </AssociationSet>
+    <AssociationSet Name="author_book_book" Association="Self.author_book_book">
+      <End Role="books" EntitySet="books" />
+      <End Role="authors_books" EntitySet="authors_books" />
+    </AssociationSet>
+    <AssociationSet Name="books_history_books" Association="Self.books_history_books">
+      <End Role="books" EntitySet="books" />
+      <End Role="books_history" EntitySet="books_history" />
+    </AssociationSet>
+    <AssociationSet Name="FK_books_history_clients" Association="Self.FK_books_history_clients">
+      <End Role="users" EntitySet="users" />
+      <End Role="books_history" EntitySet="books_history" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_privileges_privileges" Association="Self.FK_users_privileges_privileges">
+      <End Role="privileges" EntitySet="privileges" />
+      <End Role="users_privileges" EntitySet="users_privileges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_privileges_users" Association="Self.FK_users_privileges_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="users_privileges" EntitySet="users_privileges" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
